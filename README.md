@@ -2,18 +2,6 @@
 
 This repository contains the official Polyflix Helm charts.
 
-## Prerequisites
-
-- [helm-docs](https://github.com/norwoodj/helm-docs)
-- [pre-commit](https://pre-commit.com/#install)
-
-Run the following commands to install the pre-commit hooks : 
-
-```shell
-pre-commit install
-pre-commit install-hooks
-```
-
 ## Install the repository
 
 To install the repository on your host and be able to pull charts from it, you'll need to execute the following command : 
@@ -35,6 +23,18 @@ helm-docs --chart-search-root=charts --template-files template/README.tpl.md
 ```
 
 ## Contributing
+
+### Prerequisites
+
+- [helm-docs](https://github.com/norwoodj/helm-docs)
+- [pre-commit](https://pre-commit.com/#install)
+
+Run the following commands to install the pre-commit hooks : 
+
+```shell
+pre-commit install
+pre-commit install-hooks
+```
 
 In order to make updates on one or more charts on the project, please follow the following instructions :
 
