@@ -22,4 +22,15 @@ entries:
     urls:
     - https://github.com/polyflix/helm-charts/releases/download/example-0.1.0/example-0.1.0.tgz
     version: 0.1.0
+  service:
+  - apiVersion: v2
+    appVersion: X.X.X
+    created: "2022-10-20T10:42:41.658926265Z"
+    description: A base Helm chart that must be used as a dependency when creating Polyflix service charts.
+    digest: 48858b6d005ee4845bd1bd931de2be932c5e311541766fd018563b32841f03e1
+    name: service
+    type: application
+    urls:
+    - https://github.com/polyflix/helm-charts/releases/download/service-0.1.0/service-0.1.0.tgz
+    version: 0.1.0
 generated: "2022-10-20T09:58:32.711400821Z"
