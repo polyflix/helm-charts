@@ -1,0 +1,109 @@
+# nameOverride -- Override the name of the release, by keeping the release name as suffix
+nameOverride: ""
+# fullnameOverride -- Override the entire release name
+fullnameOverride: ""
+# replicaCount -- The number of replicas to deploy
+replicaCount: 1
+
+image:
+  # image.repository -- The repository of the image to deploy
+  repository: ghcr.io/polyflix/example
+  # image.pullPolicy -- Define the image pulling behavior. Can be either Always or IfNotPresent.
+  pullPolicy: Always
+  # image.tag -- The image tag to deploy
+  tag: main
+
+# imagePullSecrets -- A list of secrets that can be used by our deploymet to authenticate to registry.
+imagePullSecrets: []
+
+# extraEnvVars -- Extra environment variables to pass to the container
+extraEnvVars: []
+
+# extraEnvVarsSecrets -- Extra secret used to populate the container environment
+extraEnvVarsSecrets: []
+
+migrations:
+  # migrations.enabled -- Set this to true if the service has PostgreSQL migrations to apply.
+  # We assume that the migrations are just another tag for the image.
+  # For example, if the image is : ghcr.io/polyflix/example:main
+  # the image migration should be located at : ghcr.io/polyflix/example:main-migrations
+  enabled: false
+  # extraEnvVars -- Extra env vars to pass to the migrations container
+  extraEnvVars: []
+    # - name: POSTGRES_URL
+    #   value: mysuperurl
+  # extraEnvVarsSecrets -- Extra secrets to use to populate the migration environment.
+  extraEnvVarsSecrets: []
+    # - name: mysupersecret
+
+probes:
+  liveness:
+    # probes.liveness.path -- The path for the Kubernetes liveness probe.
+    path: /
+  readiness:
+    # probes.readiness.path -- The path for the Kubernetes readiness probe.
+    path: /
+
+serviceAccount:
+  # serviceAccount.create -- Specifies whether a service account should be created
+  create: true
+  # serviceAccount.annotations -- Annotations to add to the service account
+  annotations: {}
+  # serviceAccount.name -- The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+# podAnnotations -- Annotations to add to the pod
+podAnnotations: {}
+
+# podSecurityContext -- Security context of the pod
+podSecurityContext: {}
+  # fsGroup: 2000
+
+# securityContext -- Security context of the deployment
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  # service.type -- The type of service to expose the deployment
+  type: ClusterIP
+  # service.port -- The port of the service used to expose the deployment
+  port: 80
+
+# resources -- The deployment resources
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  # autoscaling.enabled -- Enable the auto scaling of the deployment.
+  enabled: false
+  # autoscaling.minReplicas -- The minimum replicas for the deployment.
+  minReplicas: 1
+  # autoscaling.maxReplicas -- The maximum replicas for the deployment.
+  maxReplicas: 100
+  # autoscaling.targetCPUUtilizationPercentage -- 
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+# nodeSelector -- A node selector configuration for our deployment
+nodeSelector: {}
+
+# tolerations -- Tolerations for the pod
+tolerations: []
+
+# affinity -- Pod affinity
+affinity: {}

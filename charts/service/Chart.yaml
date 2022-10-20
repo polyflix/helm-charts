@@ -1,0 +1,6 @@
+apiVersion: v2
+name: service
+description: A base Helm chart that must be used as a dependency when creating Polyflix service charts.
+type: application
+version: 0.1.0
+appVersion: "X.X.X"
