@@ -66,7 +66,7 @@ failureThreshold: 3
 httpGet:
   path: {{ hasKey .config "path" | ternary .config.path "/" }}
   port: {{ hasKey .config "port" | ternary .config.port "http" }}
-initialDelaySeconds: 15
+initialDelaySeconds: {{ .config.initialDelaySeconds }}
 periodSeconds: 15
 successThreshold: 1
 timeoutSeconds: 15
@@ -77,7 +77,7 @@ failureThreshold: 3
 httpGet:
   path: {{ hasKey .config "path" | ternary .config.path "/" }}
   port: {{ hasKey .config "port" | ternary .config.port "http" }}
-initialDelaySeconds: 15
+initialDelaySeconds: {{ .config.initialDelaySeconds }}
 periodSeconds: 15
 successThreshold: 3
 timeoutSeconds: 15

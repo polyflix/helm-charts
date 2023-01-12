@@ -2,7 +2,7 @@
 
 A base Helm chart that must be used as a dependency when creating Polyflix service charts.
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: X.X.X](https://img.shields.io/badge/AppVersion-X.X.X-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: X.X.X](https://img.shields.io/badge/AppVersion-X.X.X-informational?style=flat-square)
 
 ## Installing the Chart
 
@@ -36,7 +36,9 @@ $ helm install my-release polyflix/service
 | nodeSelector | object | `{}` | A node selector configuration for our deployment |
 | podAnnotations | object | `{}` | Annotations to add to the pod |
 | podSecurityContext | object | `{}` | Security context of the pod |
+| probes.liveness.initialDelaySeconds | int | `15` | The time in seconds to wait before sending the first probe request. |
 | probes.liveness.path | string | `"/"` | The path for the Kubernetes liveness probe. |
+| probes.readiness.initialDelaySeconds | int | `15` | The time in seconds to wait before sending the first probe request. |
 | probes.readiness.path | string | `"/"` | The path for the Kubernetes readiness probe. |
 | replicaCount | int | `1` | The number of replicas to deploy |
 | resources | object | `{}` | The deployment resources |

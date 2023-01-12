@@ -40,9 +40,13 @@ probes:
   liveness:
     # probes.liveness.path -- The path for the Kubernetes liveness probe.
     path: /
+    # probes.liveness.initialDelaySeconds -- The time in seconds to wait before sending the first probe request.
+    initialDelaySeconds: 15
   readiness:
     # probes.readiness.path -- The path for the Kubernetes readiness probe.
     path: /
+    # probes.readiness.initialDelaySeconds -- The time in seconds to wait before sending the first probe request.
+    initialDelaySeconds: 15
 
 serviceAccount:
   # serviceAccount.create -- Specifies whether a service account should be created
