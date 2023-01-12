@@ -3,6 +3,16 @@ entries:
   service:
   - apiVersion: v2
     appVersion: X.X.X
+    created: "2023-01-12T11:49:45.57696227Z"
+    description: A base Helm chart that must be used as a dependency when creating Polyflix service charts.
+    digest: 1d5476f635c109f98aaba25ea91b1cc8d287fe5ab7fe15f073b79801f4f8d090
+    name: service
+    type: application
+    urls:
+    - https://github.com/polyflix/helm-charts/releases/download/service-0.1.2/service-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: X.X.X
     created: "2022-10-20T10:51:02.222953442Z"
     description: A base Helm chart that must be used as a dependency when creating Polyflix service charts.
     digest: ca98926e6fef28dd5726ea62aee405849d292c2b4286e5bf03f323f356df3853
